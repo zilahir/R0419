@@ -14,7 +14,7 @@ int main()
 {
   int number;
 
-  cout << "Input an integer:";
+  cout << "Input an integer: ";
   cin >> number;
   
   is_odd_or_even(number);

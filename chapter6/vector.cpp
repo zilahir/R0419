@@ -14,7 +14,7 @@ int main()
   do {
       cout << "Input grade (4-10) ";
       cin >> grade;
-      if (grade > 0) {
+      if (grade >= 4 && grade <= 10) {
           grades.push_back(grade);
       }
 

@@ -5,25 +5,24 @@ using namespace std;
 int main()
 {
   #include <vector>
-  std::vector< int > hours;
-  int hour;
+  std::vector< double > hours;
+  double hour;
   int num_of_days;
 
-    cout << "The program calculates the total amount of work hours during a given time frame and the average work day length." << endl;
+    cout << "The program calculates the total amount of" << endl << "work hours during a given time frame and the average work day length." << endl;
     cout << "How many days:" << endl;
 
     cin >> num_of_days;
 
-  do {
-      cout << "Input hours of workday " << hours.size() + 1 << ": ";
+  for (int i = 0; i < num_of_days; i = i + 1) {
+    cout << "Input hours of workday " << i + 1 << ": ";
       cin >> hour;
       if (hour > 0) {
           hours.push_back(hour);
       }
+  }
 
-  } while(hours.size() != num_of_days);
-
-  float sum = 0;
+  double sum = 0;
 
   for (int i = 0; i < hours.size(); i++) {
       sum += hours[i];
@@ -31,7 +30,7 @@ int main()
 
   cout << "Total work hours: " << sum << endl;
 
-  float avg;
+  double avg;
   
   avg = sum / hours.size();
 
@@ -40,6 +39,8 @@ int main()
   cout << "Inputted hours: ";
 
   for (int i = 0; i < hours.size(); i++) {
-    cout << " " << hours[i];
+    cout << hours[i] << " " ;
   }
+
+  cout << endl;
 }

@@ -21,6 +21,21 @@ int calculate_sum(int matrix[5][5]);
 
  }
 
+ void print_matrix(int mat[5][5])
+ {
+    int m = 5;
+    int n = 5;
+    int sum = 0, i, j;
+
+    for (i = 0; i < n; ++i) {
+        for (j = 0; j < m; ++j) {
+            cout << mat[i][j] << " ";
+        }
+        cout << endl;
+    }
+
+ }
+
 int main(void)
 {
   int matrix[5][5];
@@ -37,7 +52,7 @@ int main(void)
     }
     file.close();
     cout << "Matrix:" << endl;
-    // print_matrix(matrix);
+    print_matrix(matrix);
     sum = count_sum(matrix);
     cout << "Sum of elements: " << sum << endl;
   }

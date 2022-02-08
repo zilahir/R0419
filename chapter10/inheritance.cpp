@@ -89,19 +89,20 @@ long Vehicle::InputDrivenKM() {
 // - Similarly if the car is not running, program prints: “Car is not running”
 
 class Car : public Vehicle {
-  string weight;
-  string speed;
-  string km;
+  int weight;
+  int speed;
+  long km;
   string brand;
   string model;
-  string license;
-  int is_running;
+  string register_no;
+  bool running;
     public:
-        Car(string car_brand, string car_model, string car_license, int car_is_running) : Vehicle(weight, speed, km) {
-            brand = car_brand;
-            model = car_model;
-            license = car_license;
-            is_running = car_is_running;
+        Car(int car_weight, int speed, long km, string car_brand, string car_model, string car_license, int car_is_running) : Vehicle(car_weight, speed, km) {
+          brand = car_brand;
+          model = car_model;
+          register_no = car_license;
+          running = car_is_running;
+          weight = car_weight;
         }
 
         void check_up() {
@@ -111,18 +112,22 @@ class Car : public Vehicle {
             cout << "Kilometres:" << driven_km << endl;
             cout << "weight:" << weight << endl;
             cout << "Top speed:" << top_speed << endl;
-            cout << "License plate:" << license << endl;
-            cout << "car is not running" << endl;
+            cout << "License plate:" << register_no << endl;
+            if (running) {
+              cout << "car is running." << endl;
+            } else {
+              cout << "car is not running." << endl;
+            }
         }
 
         void turn_on() {
-            is_running = 1;
+            running = true;
         }
 
         void turn_off() {
-            is_running = 0;
+            running = false;
         }
-}
+};
 
  int main() {
 
